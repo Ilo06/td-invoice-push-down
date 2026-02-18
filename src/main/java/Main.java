@@ -3,6 +3,7 @@ public class Main {
         DataRetriever dataRetriever = new DataRetriever();
 
 //        System.out.println(dataRetriever.findInvoiceTotals());
-        System.out.println(dataRetriever.findConfirmedAndPaidInvoiceTotals());
+//        System.out.println(dataRetriever.findConfirmedAndPaidInvoiceTotals());
+        System.out.println(dataRetriever.computeStatusTotals());
     }
 }
