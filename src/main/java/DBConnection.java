@@ -6,7 +6,7 @@ public class DBConnection {
 
     public Connection getConnection() {
         try {
-            String jdbcURl = "jdbc:postgresql://localhost:5432/invoice"; //
+            String jdbcURl = "jdbc:postgresql://localhost:5432/invoice";
             String user = "postgres";
             return DriverManager.getConnection("jdbc:postgresql://localhost:5432/invoice", "postgres", "020606");
         } catch (SQLException e) {
