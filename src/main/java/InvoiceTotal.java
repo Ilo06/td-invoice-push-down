@@ -4,11 +4,19 @@ public class InvoiceTotal {
     private int id;
     private String name;
     private InvoiceStatus status;
+    private Double total;
 
-    public InvoiceTotal(int id, String name, InvoiceStatus status) {
+    public InvoiceTotal(int id, String name, InvoiceStatus status, Double total) {
         this.id = id;
         this.name = name;
         this.status = status;
+        this.total = total;
+    }
+
+    public InvoiceTotal(int id, String name, Double total) {
+        this.id = id;
+        this.name = name;
+        this.total = total;
     }
 
     public int getId() {
@@ -35,16 +43,25 @@ public class InvoiceTotal {
         this.status = status;
     }
 
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
     @Override
     public boolean equals(Object o) {
+
         if (o == null || getClass() != o.getClass()) return false;
         InvoiceTotal that = (InvoiceTotal) o;
-        return id == that.id && Objects.equals(name, that.name) && status == that.status;
+        return id == that.id && Objects.equals(name, that.name) && status == that.status && Objects.equals(total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status);
+        return Objects.hash(id, name, status, total);
     }
 
     @Override
@@ -53,6 +70,7 @@ public class InvoiceTotal {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", status=" + status +
+                ", total=" + total +
                 '}';
     }
 }
